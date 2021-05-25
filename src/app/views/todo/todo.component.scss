@@ -1,0 +1,29 @@
+.wrapper {
+  display: grid;
+  gap: 10em;
+  background-color: #eee;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem rgba(2, 8, 20, 0.1) 0px
+    0.075rem 0.175rem;
+  height: 350px;
+  flex-direction: column;
+  width: auto;
+  transition: all 200ms ease;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+th {
+  font-size: clamp(5px, 20px, 100px);
+}
+
+td {
+  padding: 10px;
+}

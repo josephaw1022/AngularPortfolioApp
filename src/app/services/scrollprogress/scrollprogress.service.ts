@@ -1,11 +1,9 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { ScrollprogressService } from './services/scrollprogress/scrollprogress.service';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+import { Injectable, HostListener, OnInit } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
 })
-export class AppComponent implements OnInit {
+export class ScrollprogressService {
   progresValue: number;
   rangeArray: number[];
   constructor() {
@@ -25,6 +23,4 @@ export class AppComponent implements OnInit {
           element.clientHeight)) *
       100;
   }
-
-  ngOnInit() {}
 }

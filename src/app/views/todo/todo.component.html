@@ -1,0 +1,13 @@
+<ng-container class="wrapper">
+  <div class="container">
+    <table matSort (matSortChange)="sortData($event)" class="todoContainer">
+      <tr>
+        <th mat-sort-header="name" style="margin-bottom: 10px">To Do</th>
+      </tr>
+
+      <tr *ngFor="let dessert of sortedData" class="card">
+        <td>- {{ dessert.name }}</td>
+      </tr>
+    </table>
+  </div>
+</ng-container>

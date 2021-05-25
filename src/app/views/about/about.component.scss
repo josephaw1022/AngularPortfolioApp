@@ -1,0 +1,39 @@
+.grid-layout {
+  background-color: #eee;
+  padding: 20px 20px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(100px, 350px, 650px), 2fr)
+  );
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card {
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem rgba(2, 8, 20, 0.1) 0px
+    0.075rem 0.175rem !important;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  transition: all 200ms ease;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin: 20px;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em rgba(2, 8, 20, 0.08) 0px
+      0.175em 0.5em !important;
+  }
+}
+
+ng-container {
+  flex-wrap: wrap;
+  display: flex;
+}

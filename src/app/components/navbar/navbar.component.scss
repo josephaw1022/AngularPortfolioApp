@@ -1,0 +1,40 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: clamp(100px, 200px, 300px);
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+span {
+  transition: 300ms ease;
+}
+
+button {
+  background: transparent;
+
+  span {
+    color: white;
+  }
+}
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 400px) {
+  .mydiv {
+    display: none !important;
+  }
+}
