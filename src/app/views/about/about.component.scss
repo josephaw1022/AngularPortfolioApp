@@ -12,6 +12,7 @@
 }
 
 mat-card {
+  border-radius: 20px;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem rgba(2, 8, 20, 0.1) 0px
     0.075rem 0.175rem !important;
   height: 300px;
@@ -36,4 +37,242 @@ mat-card {
 ng-container {
   flex-wrap: wrap;
   display: flex;
+}
+
+@mixin card($image) {
+  background-image: $image !important;
+  background-position: center;
+  background-size: 120%;
+  border: black;
+  transition: 700ms ease;
+
+  &:hover {
+    background-size: 200%;
+    transition: 1200ms ease;
+    opacity: 0.7;
+  }
+}
+
+.card1 {
+  @include card(url("../../../assets/img/django.png"));
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #0a2f20;
+      }
+    }
+  }
+}
+
+.card2 {
+  @include card(url("../../../assets/img/react.png"));
+}
+
+.card3 {
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #c3002f;
+      }
+    }
+  }
+  @include card(url("../../../assets/img/angular.png"));
+}
+
+.card4 {
+  @include card(url("../../../assets/img/flask.png"));
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #333;
+      }
+    }
+  }
+}
+
+.card5 {
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #c3002f;
+      }
+    }
+  }
+  @include card(url("../../../assets/img/github.png"));
+}
+.card6 {
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #333;
+      }
+    }
+  }
+  @include card(url("../../../assets/img/next.png"));
+}
+.card7 {
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #333;
+      }
+    }
+  }
+  @include card(url("../../../assets/img/node.png"));
+}
+
+.card8 {
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #333;
+      }
+    }
+  }
+  @include card(url("../../../assets/img/express.png"));
+}
+
+.card9 {
+  &:hover {
+    .pill {
+      animation-delay: 1200ms ease;
+      transition-delay: 1200ms ease;
+      border-radius: 25px;
+      overflow: hidden;
+      background-color: #fff;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    div {
+      mat-card-content,
+      mat-card-title {
+        color: #333;
+      }
+    }
+  }
+  @include card(url("../../../assets/img/vue.png"));
+}
+.card10 {
+  @include card(url("../../../assets//img/next.png"));
+}
+mat-card {
+  mat-card-title,
+  mat-card-content {
+    color: transparent;
+  }
+
+  &:hover {
+    mat-card-title,
+    mat-card-content {
+      color: black;
+      opacity: 1;
+      transition-delay: 500ms;
+    }
+  }
+}
+
+.pill {
+  &:hover {
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #fff;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
 }

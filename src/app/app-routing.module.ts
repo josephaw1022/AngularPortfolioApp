@@ -7,9 +7,10 @@ import { TodoComponent } from './views/todo/todo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'About', component: AboutComponent },
+  { path: 'Skills', component: AboutComponent },
   { path: 'Polls', component: PollsComponent },
   { path: 'Todo', component: TodoComponent },
+
 ];
 
 @NgModule({
