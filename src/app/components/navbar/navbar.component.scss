@@ -22,6 +22,7 @@ span {
 
 button {
   background: transparent;
+  overflow: hidden;
 
   span {
     color: white;
@@ -31,10 +32,81 @@ button {
 .Navbar {
   display: flex;
   justify-content: space-between;
+  height: 100px;
+
+  .items {
+    width: clamp(1fr, 1fr, 2fr);
+
+    h1,
+    h6 {
+      font-size: clamp(1px, 15px, 30px) !important;
+      margin: 5px;
+    }
+  }
+}
+@media screen and (max-width: 300px) {
+  .Navbar {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  h1,
+  h6 {
+    font-size: clamp(1px, 12px, 19px);
+    transition: 1000ms ease;
+  }
+}
+@media screen and (min-width: 500px) {
+  h1,
+  h6 {
+    transition: 500ms ease;
+  }
 }
 
-@media screen and (max-width: 400px) {
-  .mydiv {
-    display: none !important;
-  }
+h6 {
+  margin-top: 0px;
+  font-size: 15px !important;
+  font-size: 3.5vw;
+}
+
+.changeName {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+.mat-icon {
+  margin-bottom: 9px;
+}
+
+h1 {
+  margin-top: 5px;
+}
+
+.menu-icon {
+  margin-top: 14px;
+}
+
+.portfolioWebsite {
+  display: flex;
+
+  align-self: center;
+  justify-content: center;
+}
+
+.Title {
+  font-size: clamp(1px, 15px, 30px) !important;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.leftSide {
+  display: flex;
 }

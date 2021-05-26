@@ -56,6 +56,16 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './state_managment/count/count.reducer';
 import { TodoComponent } from './views/todo/todo.component';
 import { ScrollprogressService } from './services/scrollprogress/scrollprogress.service';
+import { CustomDialogComponent } from './components/custom-dialog/custom-dialog.component';
+import { RippleGlobalOptions } from '@angular/material/core';
+import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
+const globalRippleConfig: RippleGlobalOptions = {
+  disabled: true,
+
+};
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +75,8 @@ import { ScrollprogressService } from './services/scrollprogress/scrollprogress.
     ContentComponent,
     AboutComponent,
     TodoComponent,
+    CustomDialogComponent,
+    CustomDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +130,9 @@ import { ScrollprogressService } from './services/scrollprogress/scrollprogress.
     MatCardModule,
     StoreModule.forRoot({ count: counterReducer }),
   ],
-  providers: [],
+  providers: [
+    // {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,22 @@
+.underLine {
+  text-decoration: underline !important;
+}
+
+$horizontal_padding: 2px;
+
+.topRow {
+  gap: 1rem;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+
+  .items {
+    margin-left: $horizontal_padding;
+    margin-right: $horizontal_padding;
+  }
+
+  button {
+    border: 0px;
+    overflow: hidden !important;
+  }
+}

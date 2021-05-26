@@ -1,9 +1,10 @@
 <div>
   <mat-progress-bar
-    *ngIf="progresValue !== 0"
+    *ngIf="progresValue > 3"
     mode="determinate"
     [value]="progresValue"
-    color="warn"
+    color="secondary"
+
   ></mat-progress-bar>
   <app-navbar></app-navbar>
   <ng-container>
