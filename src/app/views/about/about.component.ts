@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   constructor() {}
-  onHoverMessage = 'click to read more'; 
+  onHoverMessage = 'click to read more';
 
   ngOnInit(): void {}
 }

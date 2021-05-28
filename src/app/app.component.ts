@@ -25,5 +25,12 @@ export class AppComponent implements OnInit {
       100;
   }
 
+  showProgressBar(): boolean {
+    if (this.progresValue < 98 && this.progresValue > 3) {
+      return true;
+    }
+    return false;
+  }
+
   ngOnInit() {}
 }

@@ -11,16 +11,18 @@ import { CustomDialogComponent } from '../custom-dialog/custom-dialog.component'
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(private breakpointObserver: BreakpointObserver, public dialog:MatDialog) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    public dialog: MatDialog
+  ) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(CustomDialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
-
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -39,19 +41,18 @@ export class NavbarComponent {
     this.changeTitleShow();
   }
 
-  get titleName(){
-    return this.showTitle? 'show' :'hide'
-  }
-  
-  phoneDialog:IDialog = { 
-    title:"Phone Number",
-    content:"843-476-2895"
+  get titleName() {
+    return this.showTitle ? 'show' : 'hide';
   }
 
-  matDialogOpen: boolean = false ; 
+  phoneDialog: IDialog = {
+    title: 'Phone Number',
+    content: '843-476-2895',
+  };
 
-  changeMatDialogOpen ():void{ 
-    this.matDialogOpen=!this.matDialogOpen
+  matDialogOpen: boolean = false;
+
+  changeMatDialogOpen(): void {
+    this.matDialogOpen = !this.matDialogOpen;
   }
-
 }

@@ -61,10 +61,7 @@ import { RippleGlobalOptions } from '@angular/material/core';
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
-
 };
-
-
 
 @NgModule({
   declarations: [
@@ -76,7 +73,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     AboutComponent,
     TodoComponent,
     CustomDialogComponent,
-    CustomDialogComponent
+    CustomDialogComponent,
   ],
   imports: [
     BrowserModule,

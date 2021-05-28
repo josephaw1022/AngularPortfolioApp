@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'Skills', component: AboutComponent },
   { path: 'Polls', component: PollsComponent },
   { path: 'Todo', component: TodoComponent },
-
 ];
 
 @NgModule({
