@@ -30,18 +30,13 @@ button {
 }
 
 .Navbar {
+  background-color: #333;
   display: flex;
   justify-content: space-between;
   height: 100px;
 
   .items {
     width: clamp(1fr, 1fr, 2fr);
-
-    h1,
-    h6 {
-      font-size: clamp(1px, 15px, 30px) !important;
-      margin: 5px;
-    }
   }
 }
 @media screen and (max-width: 300px) {
@@ -53,7 +48,7 @@ button {
 @media screen and (max-width: 500px) {
   h1,
   h6 {
-    font-size: clamp(1px, 12px, 19px);
+    font-size: clamp(0px, 11px, 19px);
     transition: 1000ms ease;
   }
 }
@@ -67,7 +62,7 @@ button {
 h6 {
   margin-top: 0px;
   font-size: 15px !important;
-  font-size: 3.5vw;
+  // font-size: 3.5vw;
 }
 
 .changeName {
@@ -98,7 +93,7 @@ h1 {
 }
 
 .Title {
-  font-size: clamp(1px, 15px, 30px) !important;
+  color: #eee;
 }
 
 .hidden {
@@ -109,4 +104,17 @@ h1 {
 
 .leftSide {
   display: flex;
+}
+
+mat-icon.icon {
+  color: #eee;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #eee;
 }

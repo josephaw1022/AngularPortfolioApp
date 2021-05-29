@@ -36,7 +36,7 @@
       <button
         mat-button
         style="display: flex; justify-content: space-between"
-        routerLink="Skills"
+        routerLink="About"
         (click)="changeTitleShow(true); drawer.toggle()"
       >
         <mat-icon>sentiment_satisfied</mat-icon>
@@ -79,7 +79,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" class="Navbar">
+    <mat-toolbar class="Navbar">
       <div [className]="'item'">
         <div [className]="'leftSide'">
           <button
@@ -89,13 +89,15 @@
             (click)="changeTitleShow(false); drawer.toggle()"
             style="height: auto"
           >
-            <mat-icon aria-label="Side nav toggle icon" class="menu-icon"
+            <mat-icon
+              aria-label="Side nav toggle icon"
+              [className]="'icon menu-icon'"
               >menu</mat-icon
             >
           </button>
 
           <button mat-button routerLink="">
-            <h6 class="Title portfolioWebsite">Portfolio Website</h6>
+            <h1 class="Title portfolioWebsite">Portfolio Website</h1>
           </button>
         </div>
       </div>
@@ -107,10 +109,10 @@
             href="https://www.facebook.com/jw74994/"
             target="_blank"
           >
-            <mat-icon>facebook </mat-icon>
+            <mat-icon [className]="'icon'">facebook </mat-icon>
           </a>
           <button (click)="openDialog()" mat-icon-button>
-            <mat-icon> phone </mat-icon>
+            <mat-icon [className]="'icon'"> phone </mat-icon>
           </button>
         </div>
       </div>

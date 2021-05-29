@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { IDialog } from 'src/app/types/intefaces';
 import { MatDialog } from '@angular/material/dialog';
-import { CustomDialogComponent } from '../custom-dialog/custom-dialog.component';
+import { CustomDialogComponent } from '../dialogs/custom-dialog/custom-dialog.component';
+import { ReactdialogComponent } from '../dialogs/reactdialog/reactdialog.component';
+import { CopiedphonenumberService } from '../../services/copyphonenumber/copiedphonenumber.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,13 +16,16 @@ import { CustomDialogComponent } from '../custom-dialog/custom-dialog.component'
 })
 export class NavbarComponent {
   constructor(
+    public phoneService: CopiedphonenumberService,
     private breakpointObserver: BreakpointObserver,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
   ) {}
+
+  
 
   openDialog() {
     const dialogRef = this.dialog.open(CustomDialogComponent);
-
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
@@ -55,4 +62,8 @@ export class NavbarComponent {
   changeMatDialogOpen(): void {
     this.matDialogOpen = !this.matDialogOpen;
   }
+
+
+
+  
 }
