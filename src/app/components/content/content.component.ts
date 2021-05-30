@@ -1,34 +1,58 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { AfterContentInit, Component, HostListener, OnInit, AfterContentChecked, OnChanges } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { BehaviorSubject } from 'rxjs';
+import { NgZone } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss'],
 })
-export class ContentComponent {
-  value = true;
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 },
-        ];
-      }
+export class ContentComponent implements OnInit, AfterContentChecked, OnChanges {
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 2 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 },
-      ];
-    })
-  );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private host: ElementRef, 
+    private zone: NgZone,
+    public breakpointObserver: BreakpointObserver
+  ) {}
+
+  ngOnInit(){
+    this.changeColValue();
+  }
+
+  ngOnChanges(){
+    this.changeColValue()
+  }
+
+  ngAfterContentChecked(){
+    this.changeColValue();
+  }
+
+  onResize(event:any){
+
+    this.width = event.target.innerWidth ;
+    this.changeColValue();
+  }
+
+  changeColValue():void{
+    if(this.width<500){
+      this.cols = 2
+    }
+    else{
+      this.cols = 1
+    }
+  }
+
+
+  width:number = 1000;  
+  cols = 2; 
+  
+
+
+  isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)')
+
+  
+
 }

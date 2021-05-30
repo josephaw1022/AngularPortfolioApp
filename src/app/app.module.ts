@@ -26,9 +26,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatStepperModule } from '@angular/material/stepper';
-import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -45,6 +45,7 @@ import { FlaskdialogComponent } from './components/dialogs/flaskdialog/flaskdial
 import { GithubdialogComponent } from './components/dialogs/githubdialog/githubdialog.component';
 import { NextdialogComponent } from './components/dialogs/nextdialog/nextdialog.component';
 import { NodedialogComponent } from './components/dialogs/nodedialog/nodedialog.component';
+import { ReactdialogComponent } from './components/dialogs/reactdialog/reactdialog.component';
 import { VuedialogComponent } from './components/dialogs/vuedialog/vuedialog.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { counterReducer } from './state_managment/count/count.reducer';
@@ -53,8 +54,6 @@ import { HomeComponent } from './views/home/home.component';
 import { PollsComponent } from './views/polls/polls.component';
 import { SkillsComponent } from './views/skills/skills.component';
 import { TodoComponent } from './views/todo/todo.component';
-import { ReactdialogComponent } from './components/dialogs/reactdialog/reactdialog.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
 };

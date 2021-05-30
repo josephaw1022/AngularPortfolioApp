@@ -6,8 +6,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CopiedphonenumberService {
   constructor(public _snackbar: MatSnackBar) {}
-  
-  action(){
-    this._snackbar.open("copied to clipboard", "close", {duration:2000, panelClass:['changeColor'], horizontalPosition:"right"})
+
+  action() {
+    this._snackbar.open('copied to clipboard', 'close', {
+      duration: 2000,
+      panelClass: ['changeColor'],
+      horizontalPosition: 'right',
+    });
   }
 }

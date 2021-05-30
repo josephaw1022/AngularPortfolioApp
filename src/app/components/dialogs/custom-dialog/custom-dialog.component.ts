@@ -7,8 +7,8 @@ import { CopiedphonenumberService } from '../../../services/copyphonenumber/copi
   templateUrl: './custom-dialog.component.html',
   styleUrls: ['./custom-dialog.component.scss'],
 })
-export class CustomDialogComponent implements OnDestroy{
-  constructor(public phoneService : CopiedphonenumberService) {}
+export class CustomDialogComponent implements OnDestroy {
+  constructor(public phoneService: CopiedphonenumberService) {}
 
   phoneNumber: string = '8434762895';
 
@@ -17,17 +17,11 @@ export class CustomDialogComponent implements OnDestroy{
 
   changeValue(): void {
     this.value = 'Copied!';
-
   }
 
-
-  ngOnDestroy(){
-    if (this.value==='Copied!'){
+  ngOnDestroy() {
+    if (this.value === 'Copied!') {
       this.phoneService.action();
     }
   }
-
-
-
-
 }

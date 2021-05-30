@@ -22,8 +22,6 @@ export class NavbarComponent {
     private _snackBar: MatSnackBar
   ) {}
 
-  
-
   openDialog() {
     const dialogRef = this.dialog.open(CustomDialogComponent);
     dialogRef.afterClosed().subscribe((result) => {
@@ -62,8 +60,4 @@ export class NavbarComponent {
   changeMatDialogOpen(): void {
     this.matDialogOpen = !this.matDialogOpen;
   }
-
-
-
-  
 }

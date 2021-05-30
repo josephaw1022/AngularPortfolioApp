@@ -47,29 +47,33 @@ ng-container {
   border: black;
   transition: 700ms ease;
   width: clamp(1fr, 100%, 400px);
-
+  transition-delay: 4000ms ease;
+  animation-delay: 4000ms ease;
   &:hover {
     background-size: 200%;
     transition: 1200ms ease;
     opacity: 0.7;
   }
 }
+@mixin pill {
+  animation-delay: 4s ease !important;
+  transition-delay: 4s ease !important;
+  transition-duration: 4s ease !important;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #fff;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
 
 .card1 {
   @include card(url("../../../assets/img/django.png"));
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
-
     div {
       mat-card-content,
       mat-card-title {
@@ -86,15 +90,7 @@ ng-container {
 .card3 {
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
 
     div {
@@ -111,15 +107,7 @@ ng-container {
   @include card(url("../../../assets/img/flask.png"));
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
 
     div {
@@ -134,15 +122,7 @@ ng-container {
 .card5 {
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
 
     div {
@@ -157,15 +137,7 @@ ng-container {
 .card6 {
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
 
     div {
@@ -180,15 +152,7 @@ ng-container {
 .card7 {
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
 
     div {
@@ -204,15 +168,7 @@ ng-container {
 .card8 {
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
 
     div {
@@ -228,15 +184,7 @@ ng-container {
 .card9 {
   &:hover {
     .pill {
-      animation-delay: 1200ms ease;
-      transition-delay: 1200ms ease;
-      border-radius: 25px;
-      overflow: hidden;
-      background-color: #fff;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+      @include pill();
     }
 
     div {
