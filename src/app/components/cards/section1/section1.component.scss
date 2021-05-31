@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem !important;
+}
+
+mat-card {
+  background-color: #333;
+  margin-top: 10px;
+  width: clamp(0px, 100%, 100px);
+  color: #eee;
+  overflow: hidden;
+}
+
+mat-grid-list {
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0px !important;
+  padding: 0 !important;
+}

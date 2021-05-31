@@ -34,6 +34,7 @@ button {
   display: flex;
   justify-content: space-between;
   height: 100px;
+  width: 100% !important;
 
   .items {
     width: clamp(1fr, 1fr, 2fr);
@@ -48,7 +49,7 @@ button {
 @media screen and (max-width: 500px) {
   h1,
   h6 {
-    font-size: clamp(0px, 11px, 19px);
+    font-size: clamp(0px, 16px, 19px);
     transition: 1000ms ease;
   }
 }

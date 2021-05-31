@@ -1,32 +1,41 @@
 <div
   (window:resize)="onResize($event)"
-  (click)="onResize($event)"
+  (window:click)="onResize($event)"
   class="grid-container"
 >
-  <mat-grid-list cols="2" rowHeight="500px">
+  <mat-grid-list cols="2" rowHeight="300px" class="mat-grid-list">
     <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card class="dashboard-card section1-card">
+      <mat-card class="dashboard-card">
         <mat-card-header>
-          <mat-card-title ngClass="'section1-title'"> About me </mat-card-title>
+          <mat-card-title> Welcome to the site </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Cfdd</div>
+        <mat-card-content
+          [class.h22]="'isSmallScreen'"
+          [class.space-way-apart]="'!isSmallScreen'"
+          *ngIf="!isSmallScreen"
+        >
+          <mat-card class="innercards"> </mat-card>
+
+          <mat-card class="innercards"> </mat-card>
+
+          <mat-card class="innercards"> </mat-card>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="cols" [rowspan]="1">
+
+    <mat-grid-tile [colspan]="cols" [rowspan]="rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title> Education and Experience </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div>Rows: {{ rows }} Cols: {{ cols }} Width: {{ width }}</div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="cols" [rowspan]="1">
-      <mat-card class="dashboard-card">
+    <mat-grid-tile [colspan]="cols" [rowspan]="rows">
+      <mat-card ngClass="dashboard-card section3-card">
         <mat-card-header>
           <mat-card-title> </mat-card-title>
         </mat-card-header>
@@ -37,12 +46,29 @@
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card class="dashboard-card">
+      <mat-card class="dashboard-card section1-card" routerLink="Skills">
         <mat-card-header>
-          <mat-card-title> </mat-card-title>
+          <mat-card-title
+            style="padding: 10px !important; margin: 0px !important"
+            *ngIf="!isSmallScreen"
+            class="'section1-title'"
+          >
+            Top Skills
+          </mat-card-title>
+          <mat-card-title *ngIf="isSmallScreen" class="'section1-title'">
+            Top Skill
+          </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+        <mat-card-content
+          [class.h22]="'isSmallScreen'"
+          [class.space-way-apart]="'!isSmallScreen'"
+          *ngIf="!isSmallScreen"
+        >
+          <mat-card class="innercards section1-card1"> </mat-card>
+
+          <mat-card class="innercards section1-card2"> </mat-card>
+
+          <mat-card class="innercards section1-card3"> </mat-card>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

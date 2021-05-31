@@ -1,4 +1,13 @@
-import { AfterContentInit, Component, HostListener, OnInit, AfterContentChecked, OnChanges } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  HostListener,
+  OnInit,
+  AfterContentChecked,
+  OnChanges,
+  NgModule,
+  AfterViewInit,
+} from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { BehaviorSubject } from 'rxjs';
 import { NgZone } from '@angular/core';
@@ -9,50 +18,52 @@ import { ElementRef } from '@angular/core';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss'],
 })
-export class ContentComponent implements OnInit, AfterContentChecked, OnChanges {
-
-
+export class ContentComponent
+  implements OnInit, AfterContentChecked, OnChanges, AfterViewInit
+{
   constructor(
-    private host: ElementRef, 
+    private host: ElementRef,
     private zone: NgZone,
     public breakpointObserver: BreakpointObserver
   ) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.changeColValue();
   }
 
-  ngOnChanges(){
-    this.changeColValue()
-  }
-
-  ngAfterContentChecked(){
+  ngOnChanges() {
     this.changeColValue();
   }
 
-  onResize(event:any){
-
-    this.width = event.target.innerWidth ;
+  ngAfterViewInit() {
     this.changeColValue();
   }
 
-  changeColValue():void{
-    if(this.width<500){
-      this.cols = 2
+  ngAfterContentChecked() {
+    this.changeColValue();
+  }
+
+  onResize(event: any) {
+    this.width = event.target.innerWidth;
+    this.changeColValue();
+  }
+
+  changeColValue(): void {
+    if (window.innerWidth < 600 == true) {
+      this.cols = 2;
+      this.rows = 1;
     }
-    else{
-      this.cols = 1
+    if (window.innerWidth >= 600 == true) {
+      this.cols = 1;
+      this.rows = 2;
     }
+    this.isSmallScreen =
+      this.breakpointObserver.isMatched('(max-width: 600px)');
   }
 
+  width: number = window.innerWidth;
+  cols = 2;
+  rows = 1;
 
-  width:number = 1000;  
-  cols = 2; 
-  
-
-
-  isSmallScreen = this.breakpointObserver.isMatched('(max-width: 599px)')
-
-  
-
+  isSmallScreen = this.breakpointObserver.isMatched('(max-width: 600px)');
 }

@@ -1,24 +1,44 @@
 // Tags
 
-mat-grid-tile {
+mat-card-title {
+  font-size: clamp(0px, 1rem, 100px);
+  word-wrap: break-word;
+  text-align: center !important;
+  padding: 0px;
+  margin: 0px;
+}
+
+.mat-grid-tile {
+  overflow: unset !important;
   border-radius: 25px !important;
   overflow: hidden;
   transition: 500ms ease;
   &:hover {
-    transform: scale(1.011) !important;
+    transform: scale(1.014);
+    background-size: 150% !important;
   }
+}
+
+mat-grid-tile {
+  overflow: hidden;
+  transition: 500ms ease;
+}
+
+mat-card-header {
+  margin: 0px;
+  padding: 0px;
 }
 
 // Classes
 .grid-container {
   background-color: #d3d3d3;
-  height: 100% !important;
+  height: 100%;
 }
 
 .dashboard-card {
   position: absolute;
   top: 15px;
-  left: 15px;
+  left: 25px;
   right: 25px;
   bottom: 15px;
 }
@@ -31,8 +51,151 @@ mat-grid-tile {
   text-align: center;
 }
 
-.section1-card {
+.section3-card {
+  border: transparent;
   background-image: url("../../../assets/img/sectionone.png");
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   background-position: center;
+  .dashboard-card {
+    background-color: transparent;
+  }
+}
+
+.innercards {
+  height: 100%;
+  align-self: center;
+  width: clamp(1px, 100%, 200px) !important;
+  background-color: transparent;
+
+  overflow: hidden !important;
+  &:hover {
+    transition: 1000ms ease;
+  }
+}
+
+.sp32 {
+  width: clamp(0px, 50px, 200px);
+  height: clamp(0px, 100%, 200px);
+}
+
+.changeSpace {
+  display: flex;
+  justify-content: center;
+}
+
+.h22 {
+  display: grid;
+  grid-template-columns: auto;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-way-apart {
+  display: flex;
+
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section1-title {
+  text-align: center !important;
+  display: grid;
+}
+
+.aligntitle {
+  align-content: center;
+  display: flex;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(0px, 100%, 100px);
+}
+
+@media only screen and (max-width: 600px) {
+  .adapt {
+    font-size: clamp(1px, 30px, 45px);
+    text-align: center !important;
+    word-wrap: break-word;
+  }
+  .align {
+    display: flex;
+    justify-content: center;
+  }
+
+  .h22 {
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  mat-card-content {
+    height: 70%;
+  }
+
+  .section1-card {
+    background-image: url("../../../assets/img/react.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+mat-card-content {
+  height: 80%;
+}
+
+.topskill {
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  font-size: 25px;
+}
+
+@mixin section1-cards-format($image) {
+  background-color: #333;
+  background-image: url($image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-height: 10px;
+  max-height: 150px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px !important;
+
+  // border-radius: 20px;
+
+  margin-bottom: 40px !important;
+}
+
+.section1-card1 {
+  @include section1-cards-format("../../../assets/img/angular.png");
+}
+
+.section1-card2 {
+  @include section1-cards-format("../../../assets/img/react.png");
+}
+
+.section1-card3 {
+  @include section1-cards-format("../../../assets/img/django.png");
+
+  background-color: transparent !important;
+}
+
+mat-card-content,
+mat-card {
+  overflow: hidden !important;
+  padding: 1px;
+}
+
+mat-card-header {
+  padding: 23px;
 }

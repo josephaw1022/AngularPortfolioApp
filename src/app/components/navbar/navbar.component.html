@@ -1,4 +1,8 @@
-<mat-sidenav-container class="sidenav-container" hasBackdrop="true">
+<mat-sidenav-container
+  (window:resize)="changeValues($event)"
+  class="sidenav-container"
+  hasBackdrop="true"
+>
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -102,7 +106,7 @@
         </div>
       </div>
       <div class="mydiv item" style="margin-right: 10px">
-        <h1>Joseph Whiteaker</h1>
+        <h1>Joseph <br *ngIf="isPhone" />Whiteaker</h1>
         <div>
           <a
             mat-icon-button

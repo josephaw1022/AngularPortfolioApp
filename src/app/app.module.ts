@@ -54,6 +54,8 @@ import { HomeComponent } from './views/home/home.component';
 import { PollsComponent } from './views/polls/polls.component';
 import { SkillsComponent } from './views/skills/skills.component';
 import { TodoComponent } from './views/todo/todo.component';
+import { Section1Component } from './components/cards/section1/section1.component';
+import { Section2Component } from './components/cards/section2/section2.component';
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
 };
@@ -77,6 +79,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     ExpressdialogComponent,
     VuedialogComponent,
     ReactdialogComponent,
+    Section1Component,
+    Section2Component,
   ],
   imports: [
     BrowserModule,

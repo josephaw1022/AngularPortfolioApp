@@ -1,4 +1,4 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -14,13 +14,37 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, OnChanges {
   constructor(
     public phoneService: CopiedphonenumberService,
     private breakpointObserver: BreakpointObserver,
     public dialog: MatDialog,
     private _snackBar: MatSnackBar
   ) {}
+
+  ngOnInit() {
+    if (window.innerWidth < 600) {
+      this.isPhone = true;
+    } else {
+      this.isPhone = false;
+    }
+  }
+
+  ngOnChanges() {
+    if (window.innerWidth < 600) {
+      this.isPhone = true;
+    } else {
+      this.isPhone = false;
+    }
+  }
+
+  changeValues(event: any) {
+    if (event.target.innerWidth < 600) {
+      this.isPhone = true;
+    } else {
+      this.isPhone = false;
+    }
+  }
 
   openDialog() {
     const dialogRef = this.dialog.open(CustomDialogComponent);
@@ -35,6 +59,8 @@ export class NavbarComponent {
       map((result) => result.matches),
       shareReplay()
     );
+
+  isPhone = false;
 
   showTitle = true;
 
