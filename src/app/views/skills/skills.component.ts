@@ -27,6 +27,7 @@ export class SkillsComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  
   onHoverMessage = 'click to read more';
 
   ngOnInit(): void {}

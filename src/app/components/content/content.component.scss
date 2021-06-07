@@ -1,3 +1,5 @@
+$transition_time: 500ms;
+
 // Tags
 
 mat-card-title {
@@ -12,7 +14,7 @@ mat-card-title {
   overflow: unset !important;
   border-radius: 25px !important;
   overflow: hidden;
-  transition: 500ms ease;
+  transition: $transition_time ease;
   &:hover {
     transform: scale(1.014);
     background-size: 150% !important;
@@ -21,12 +23,16 @@ mat-card-title {
 
 mat-grid-tile {
   overflow: hidden;
-  transition: 500ms ease;
+  transition: $transition_time ease;
 }
 
 mat-card-header {
   margin: 0px;
   padding: 0px;
+}
+
+mat-card-title {
+  color: #eee;
 }
 
 // Classes
@@ -53,7 +59,7 @@ mat-card-header {
 
 .section3-card {
   border: transparent;
-  background-image: url("../../../assets/img/sectionone.png");
+  background-color: #333;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -64,13 +70,14 @@ mat-card-header {
 
 .innercards {
   height: 100%;
-  align-self: center;
+  margin-right: 1%;
+  margin-left: 1%;
   width: clamp(1px, 100%, 200px) !important;
   background-color: transparent;
 
   overflow: hidden !important;
   &:hover {
-    transition: 1000ms ease;
+    transform: scale(1.12);
   }
 }
 
@@ -118,7 +125,7 @@ h1 {
   font-size: clamp(0px, 100%, 100px);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .adapt {
     font-size: clamp(1px, 30px, 45px);
     text-align: center !important;
@@ -141,13 +148,19 @@ h1 {
   }
 
   .section1-card {
-    background-image: url("../../../assets/img/react.png");
+    background-image: url("../../../assets/img/react.png") !important;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
   }
 }
 
+.section1-card {
+  background-image: url("../../../assets/img/code.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 mat-card-content {
   height: 80%;
 }
@@ -160,7 +173,7 @@ mat-card-content {
 }
 
 @mixin section1-cards-format($image) {
-  background-color: #333;
+  // background-color: #333;
   background-image: url($image);
   background-repeat: no-repeat;
   background-position: center;
@@ -170,8 +183,7 @@ mat-card-content {
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 30px !important;
-
-  // border-radius: 20px;
+  border-radius: 25px;
 
   margin-bottom: 40px !important;
 }
@@ -186,8 +198,6 @@ mat-card-content {
 
 .section1-card3 {
   @include section1-cards-format("../../../assets/img/django.png");
-
-  background-color: transparent !important;
 }
 
 mat-card-content,
@@ -198,4 +208,153 @@ mat-card {
 
 mat-card-header {
   padding: 23px;
+}
+
+@keyframes faded {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: faded;
+  animation-duration: 2 * $transition_time;
+}
+
+@mixin edu {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2%;
+  box-shadow: none;
+  margin-bottom: 4% !important;
+  width: 100%;
+  justify-content: space-between !important;
+}
+.edu1 {
+  background-image: url("../../../assets/img/usc.png");
+  height: 60%;
+  @include edu;
+}
+.edu2 {
+  background-image: url("../../../assets/img/pc.png");
+  transform: scale(0.9);
+  height: 60%;
+  @include edu;
+  &:hover {
+    transform: scale(1) !important;
+  }
+}
+
+.edu-card {
+  background-image: url("../../../assets/img/school.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.white-text {
+  color: #fff;
+}
+
+@mixin smalledu {
+  display: flex;
+
+  flex-direction: row !important;
+}
+
+.cardi {
+  display: flex;
+
+  gap: 1.2rem;
+  overflow: visible !important;
+}
+
+.icon-here {
+  transition: $transition_time ease;
+  transform: scale(10);
+  color: #eee;
+  &:hover {
+    transform: scale(11);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .icon-here {
+    transform: scale(5);
+    transition: 400ms ease;
+  }
+}
+
+.mepic {
+  background-image: url("../../../assets/img/eaglescout.png");
+  background-position: center;
+  background-size: contain;
+  transform: scale(0.7);
+  height: 100%;
+  margin-right: 1%;
+  margin-left: 1%;
+  width: clamp(1px, 100%, 200px) !important;
+  background-color: transparent;
+
+  overflow: hidden !important;
+  background-repeat: no-repeat;
+  box-shadow: none;
+
+  &:hover {
+    transform: scale(0.8);
+    transition: $transition_time ease;
+  }
+
+  height: 100%;
+  border-radius: 20px !important;
+}
+
+.topTitle {
+  color: #333;
+}
+
+.aboutcard {
+  background-color: transparent;
+  box-shadow: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.mypic {
+  background-image: url("../../../assets/img/joewhiteaker.jpeg");
+  background-position: top;
+  background-size: 140%;
+  transform: scale(1.2);
+  margin-bottom: 10px;
+  height: 100%;
+  margin-right: 1%;
+  margin-left: 1%;
+  width: clamp(1px, 100%, 200px) !important;
+  background-color: transparent;
+
+  overflow: hidden !important;
+  background-repeat: no-repeat;
+  box-shadow: none;
+
+  &:hover {
+    transform: scale(1.22);
+    transition: $transition_time ease;
+  }
+
+  height: 100%;
+  border-radius: 20px !important;
+}
+
+.aboutheader {
+  font-weight: bold;
+  transform: scale(2);
+  transition: 2000ms ease;
+
+  :active {
+    transform: scale(1.4);
+  }
 }

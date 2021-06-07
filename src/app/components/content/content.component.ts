@@ -12,6 +12,9 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { BehaviorSubject } from 'rxjs';
 import { NgZone } from '@angular/core';
 import { ElementRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UofscComponent } from '../dialogs/uofsc/uofsc.component';
+import { PcComponent } from '../dialogs/pc/pc.component';
 
 @Component({
   selector: 'app-content',
@@ -24,7 +27,8 @@ export class ContentComponent
   constructor(
     private host: ElementRef,
     private zone: NgZone,
-    public breakpointObserver: BreakpointObserver
+    public breakpointObserver: BreakpointObserver,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -48,22 +52,32 @@ export class ContentComponent
     this.changeColValue();
   }
 
+  uofscdialog = UofscComponent;
+  pcdialog = PcComponent;
+
+  openDialog(component: any): void {
+    const dialogRef = this.dialog.open(component);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   changeColValue(): void {
-    if (window.innerWidth < 600 == true) {
+    if (window.innerWidth < 800 == true) {
       this.cols = 2;
       this.rows = 1;
     }
-    if (window.innerWidth >= 600 == true) {
+    if (window.innerWidth >= 800 == true) {
       this.cols = 1;
       this.rows = 2;
     }
     this.isSmallScreen =
-      this.breakpointObserver.isMatched('(max-width: 600px)');
+      this.breakpointObserver.isMatched('(max-width: 800px)');
   }
 
   width: number = window.innerWidth;
   cols = 2;
   rows = 1;
 
-  isSmallScreen = this.breakpointObserver.isMatched('(max-width: 600px)');
+  isSmallScreen = this.breakpointObserver.isMatched('(max-width: 800px)');
 }

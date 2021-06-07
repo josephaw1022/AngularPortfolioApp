@@ -56,6 +56,9 @@ import { SkillsComponent } from './views/skills/skills.component';
 import { TodoComponent } from './views/todo/todo.component';
 import { Section1Component } from './components/cards/section1/section1.component';
 import { Section2Component } from './components/cards/section2/section2.component';
+import { UofscComponent } from './components/dialogs/uofsc/uofsc.component';
+import { PcComponent } from './components/dialogs/pc/pc.component';
+import { MatTreeModule } from '@angular/material/tree';
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: true,
 };
@@ -81,6 +84,8 @@ const globalRippleConfig: RippleGlobalOptions = {
     ReactdialogComponent,
     Section1Component,
     Section2Component,
+    UofscComponent,
+    PcComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,6 +121,7 @@ const globalRippleConfig: RippleGlobalOptions = {
     MatSortModule,
     MatTabsModule,
     MatToolbarModule,
+    MatTreeModule,
     MatTooltipModule,
     ScrollingModule,
     LayoutModule,

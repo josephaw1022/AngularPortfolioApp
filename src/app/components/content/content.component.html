@@ -1,35 +1,66 @@
 <div
   (window:resize)="onResize($event)"
   (window:click)="onResize($event)"
-  class="grid-container"
+  class="grid-container fadeIn"
+  style="transition: 500ms ease"
 >
-  <mat-grid-list cols="2" rowHeight="300px" class="mat-grid-list">
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      <mat-card class="dashboard-card">
+  <mat-grid-list cols="2" rowHeight="340px" class="mat-grid-list">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" style="transform: none">
+      <mat-card class="dashboard-card aboutcard" style="transform: none">
         <mat-card-header>
-          <mat-card-title> Welcome to the site </mat-card-title>
+          <mat-card-title class="topTitle">
+            Welcome to the site
+          </mat-card-title>
         </mat-card-header>
         <mat-card-content
-          [class.h22]="'isSmallScreen'"
-          [class.space-way-apart]="'!isSmallScreen'"
-          *ngIf="!isSmallScreen"
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+          "
         >
-          <mat-card class="innercards"> </mat-card>
-
-          <mat-card class="innercards"> </mat-card>
-
-          <mat-card class="innercards"> </mat-card>
+          <mat-card
+            *ngIf="!isSmallScreen"
+            class="innercards"
+            style="height: 70%; border-radius: 25px; box-shadow: none"
+            ><mat-card-header class="aboutheader"
+              >About</mat-card-header
+            ></mat-card
+          >
+          <mat-card class="mypic" style="height: 70%; border-radius: 25px">
+            <mat-card-header> </mat-card-header>
+          </mat-card>
+          <mat-card
+            *ngIf="!isSmallScreen"
+            class="mepic"
+            style="height: 70%; border-radius: 25px"
+            ><mat-card-header></mat-card-header>
+          </mat-card>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="cols" [rowspan]="rows">
-      <mat-card class="dashboard-card">
+      <mat-card class="dashboard-card edu-card">
         <mat-card-header>
           <mat-card-title> Education and Experience </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Rows: {{ rows }} Cols: {{ cols }} Width: {{ width }}</div>
+        <mat-card-content
+          class="dashboard-card-content cardi"
+          [class.smalledu]="isSmallScreen"
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <mat-card class="edu1 innercards" (click)="openDialog(uofscdialog)">
+          </mat-card>
+
+          <mat-card class="edu2 innercards" (click)="openDialog(pcdialog)">
+          </mat-card>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -37,10 +68,18 @@
     <mat-grid-tile [colspan]="cols" [rowspan]="rows">
       <mat-card ngClass="dashboard-card section3-card">
         <mat-card-header>
-          <mat-card-title> </mat-card-title>
+          <mat-card-title> Portfolio</mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+        <mat-card-content
+          class="dashboard-card-content"
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div><mat-icon class="icon-here"> business_center </mat-icon></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -51,7 +90,7 @@
           <mat-card-title
             style="padding: 10px !important; margin: 0px !important"
             *ngIf="!isSmallScreen"
-            class="'section1-title'"
+            class="section1-title white-text"
           >
             Top Skills
           </mat-card-title>
@@ -64,11 +103,14 @@
           [class.space-way-apart]="'!isSmallScreen'"
           *ngIf="!isSmallScreen"
         >
-          <mat-card class="innercards section1-card1"> </mat-card>
+          <mat-card class="innercards section1-card1" style="box-shadow: none">
+          </mat-card>
 
-          <mat-card class="innercards section1-card2"> </mat-card>
+          <mat-card class="innercards section1-card2" style="box-shadow: none">
+          </mat-card>
 
-          <mat-card class="innercards section1-card3"> </mat-card>
+          <mat-card class="innercards section1-card3" style="box-shadow: none">
+          </mat-card>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
